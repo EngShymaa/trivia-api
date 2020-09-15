@@ -177,7 +177,7 @@ def create_app(test_config=None):
 
       while (Is_Used(new_question)):
           new_question = questions[random.randrange(0, len(questions), 1)]
-          if new_question is None:
+          if len(prev_qs) >= total:
             return jsonify({
             'success': True
             })
